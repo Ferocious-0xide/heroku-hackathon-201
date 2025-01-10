@@ -5,6 +5,7 @@ An advanced FastAPI template with scaling options, database migrations, and prod
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## What's Different in 201? 📚
+Heads up, there are real costs associated with this template. If you decidee to build with this template, please be aware of the costs.
 
 This template builds on the basic version with several advanced features:
 
@@ -35,7 +36,7 @@ This template builds on the basic version with several advanced features:
 ### Minimal Setup (Development/Testing)
 ```bash
 heroku create my-app
-heroku addons:create heroku-postgresql:mini
+heroku addons:create heroku-postgresql:essential-0
 git push heroku main
 ```
 
@@ -69,22 +70,23 @@ alembic revision --autogenerate -m "Add user table"
 
 This template includes different scaling configurations:
 
-### Minimal ($10/month)
+### Minimal 
 - 1 web dyno (basic)
 - 1 worker dyno (basic)
 - Suitable for development/testing
 
-### Starter ($75/month)
+### Starter 
 - 2 web dynos (standard-1x)
 - 1 worker dyno (standard-1x)
 - Good for small production apps
 
-### Business ($300/month)
+### Business 
 - 4 web dynos (standard-2x)
 - 2 worker dynos (standard-2x)
 - Suitable for medium traffic
 
-### Enterprise ($2,250/month)
+
+### Enterprise 
 - 6 web dynos (performance-m)
 - 3 worker dynos (performance-m)
 - High-traffic applications
