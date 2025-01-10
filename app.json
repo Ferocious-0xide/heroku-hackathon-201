@@ -1,0 +1,89 @@
+{
+    "name": "Heroku Hackathon 201",
+    "description": "Advanced FastAPI template with scaling options and add-ons",
+    "repository": "https://github.com/YOUR_USERNAME/heroku-hackathon-201",
+    "keywords": ["python", "fastapi", "htmx", "postgresql", "redis", "alembic"],
+    "website": "https://github.com/YOUR_USERNAME/heroku-hackathon-201",
+    "success_url": "/docs",
+    
+    "addons": [
+      {
+        "plan": "heroku-postgresql:mini",
+        "as": "PRIMARY_DB"
+      },
+      {
+        "plan": "heroku-redis:mini",
+        "as": "SESSION_CACHE"
+      },
+      {
+        "plan": "papertrail:choklad",
+        "as": "LOGGING"
+      }
+    ],
+  
+    "buildpacks": [
+      {
+        "url": "heroku/python"
+      }
+    ],
+  
+    "environments": {
+      "review": {
+        "addons": [
+          "heroku-postgresql:mini",
+          "heroku-redis:mini"
+        ],
+        "scripts": {
+          "postdeploy": "python -m alembic upgrade head"
+        },
+        "formation": {
+          "web": {
+            "quantity": 1,
+            "size": "basic"
+          }
+        }
+      },
+      "production": {
+        "scripts": {
+          "postdeploy": "python -m alembic upgrade head"
+        },
+        "formation": {
+          "web": {
+            "quantity": 2,
+            "size": "standard-1x"
+          },
+          "worker": {
+            "quantity": 1,
+            "size": "standard-1x"
+          }
+        }
+      }
+    },
+  
+    "env": {
+      "PYTHON_VERSION": {
+        "description": "Python runtime version",
+        "value": "3.11.5"
+      },
+      "ENVIRONMENT": {
+        "description": "Application environment (development/staging/production)",
+        "value": "production"
+      },
+      "SECRET_KEY": {
+        "description": "Secret key for session management",
+        "generator": "secret"
+      },
+      "REDIS_MAX_CONNECTIONS": {
+        "description": "Maximum Redis connections per process",
+        "value": "10"
+      },
+      "WORKER_CONCURRENCY": {
+        "description": "Number of concurrent worker processes",
+        "value": "3"
+      },
+      "LOG_LEVEL": {
+        "description": "Application logging level",
+        "value": "INFO"
+      }
+    }
+  }
