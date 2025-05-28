@@ -56,9 +56,8 @@
         }
         .heroku-logo {
             width: 60px;
-            height: 60px;
+            height: auto;
             margin-bottom: 20px;
-            filter: brightness(0) invert(1);
         }
         .main-content {
             background-color: #f8f9fa;
@@ -140,13 +139,8 @@
     <!-- Hero Section -->
     <div class="jumbotron text-center">
         <div class="container">
-            <!-- Heroku Logo SVG -->
-            <svg class="heroku-logo" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.61 0H3.39C2.189 0 1.23.96 1.23 2.16v19.681c0 1.198.959 2.159 2.16 2.159h17.22c1.2 0 2.159-.961 2.159-2.159V2.16C22.77.96 21.811 0 20.61 0zm.96 21.841c0 .539-.421.96-.96.96H3.39c-.54 0-.96-.421-.96-.96V2.16c0-.54.42-.96.96-.96h17.22c.539 0 .96.42.96.96v19.681z"/>
-                <path d="M6.63 20.791L9.33 18.37c.539-.48.84-1.08.84-1.68v-2.4c0-.48-.18-.84-.54-1.08l-2.7-1.8c-.36-.24-.84-.24-1.2 0l-2.7 1.8c-.36.24-.54.6-.54 1.08v2.4c0 .6.301 1.2.84 1.68l2.7 2.421c.36.36.96.36 1.32 0z"/>
-                <path d="M17.37 3.209L14.67 5.63c-.539.48-.84 1.08-.84 1.68v2.4c0 .48.18.84.54 1.08l2.7 1.8c.36.24.84.24 1.2 0l2.7-1.8c.36-.24.54-.6.54-1.08v-2.4c0-.6-.301-1.2-.84-1.68l-2.7-2.421c-.36-.36-.96-.36-1.32 0z"/>
-                <path d="M12 7.2v9.6l6-4.8z"/>
-            </svg>
+            <!-- Heroku Logo -->
+            <img src="{{ url_for('static', path='heroku-logo-stroke-purple.svg') }}" class="heroku-logo" alt="Heroku Logo">
             <h1>{% block hero_title %}Heroku Hackathon 201{% endblock %}</h1>
             <p>{% block hero_subtitle %}Build something amazing with FastAPI, PostgreSQL, HTMX, and TailwindCSS - deployed on Heroku{% endblock %}</p>
             {% block hero_button %}{% endblock %}
