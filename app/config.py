@@ -7,7 +7,8 @@ class Settings(BaseSettings):
         "DATABASE_URL",
         "postgresql://postgres:postgres@localhost:5432/heroku_hackathon"
     )
-    if DATABASE_URL.startswith("postgres://"):
+    # Ensure SQLAlchemy compatibility with Heroku's DATABASE_URL
+    if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
         DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
 @lru_cache()
