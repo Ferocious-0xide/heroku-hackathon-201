@@ -14,7 +14,7 @@ A **production-ready** FastAPI application with:
 - ✅ **Pure Python** - No Rust dependencies (deployment-friendly)
 - ✅ **Working example** - User form with database integration
 
-**Live Demo:** https://heroku-hackathon-201-e1ae677bcf73.herokuapp.com/
+**Live Demo:** https://heroku-hackathon-201-ff8cc9e77841.herokuapp.com/
 
 ## ⚡ Quick Environment Check
 
@@ -248,7 +248,7 @@ heroku git:remote -a your-app-name
 
 ### 🆘 Still stuck?
 
-1. **Check the working demo:** https://heroku-hackathon-201-e1ae677bcf73.herokuapp.com/
+1. **Check the working demo:** https://heroku-hackathon-201-ff8cc9e77841.herokuapp.com/
 2. **Compare your setup** to the working example
 3. **Use `heroku logs --app your-app-name --tail`** for real-time debugging
 4. **Ensure you're following the exact Python 3.11 requirement**
