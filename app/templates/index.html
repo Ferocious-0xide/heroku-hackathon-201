@@ -1,18 +1,99 @@
 {% extends "base.html" %}
 
+{% block hero_button %}
+<a href="/form" class="btn btn-primary btn-lg">Start Building</a>
+{% endblock %}
+
 {% block content %}
-<div class="max-w-2xl mx-auto">
-    <h1 class="text-3xl font-bold mb-8">Welcome to Heroku Hackathon</h1>
-    <p class="mb-4">Build something amazing with:</p>
-    <ul class="list-disc ml-8 mb-8">
-        <li>FastAPI</li>
-        <li>HTMX</li>
-        <li>PostgreSQL</li>
-        <li>TailwindCSS</li>
-    </ul>
-    <a href="/form" 
-       class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Start Here
-    </a>
+<div class="alert alert-info text-center" role="alert">
+    <strong>Ready to deploy!</strong> This template includes everything you need for a successful hackathon project.
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="content-card">
+            <h2 style="color: #532F8C; margin-bottom: 25px;">🚀 What's Included</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="tech-list">
+                        <li>FastAPI Backend</li>
+                        <li>PostgreSQL Database</li>
+                        <li>Alembic Migrations</li>
+                        <li>HTMX Integration</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="tech-list">
+                        <li>Bootstrap UI</li>
+                        <li>User Management</li>
+                        <li>Form Handling</li>
+                        <li>Heroku Ready</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 20px; background-color: #f8f9fa; border-radius: 6px; border-left: 4px solid #845ac7;">
+                <h4 style="color: #532F8C; margin-bottom: 15px;">💡 Perfect For</h4>
+                <p style="margin-bottom: 10px; color: #666;">
+                    <strong>Hackathons:</strong> Get up and running in 5 minutes<br>
+                    <strong>Prototypes:</strong> Full-stack foundation ready to customize<br>
+                    <strong>Learning:</strong> Modern Python web development patterns
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="content-card">
+            <h3 style="color: #532F8C; margin-bottom: 20px;">🎯 Quick Start</h3>
+            <div style="background-color: #f8f9fa; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
+                <small style="color: #666;">Deploy in 3 steps:</small>
+                <ol style="margin: 10px 0 0 20px; color: #532F8C;">
+                    <li>Fork this repo</li>
+                    <li>Create Heroku app</li>
+                    <li>Push to deploy</li>
+                </ol>
+            </div>
+            
+            <a href="/form" class="btn btn-primary btn-block" style="margin-bottom: 15px;">
+                Try the Demo Form
+            </a>
+            
+            <a href="https://github.com/your-repo/heroku-hackathon-201" class="btn btn-default btn-block" target="_blank">
+                View on GitHub
+            </a>
+        </div>
+        
+        <div class="content-card">
+            <h4 style="color: #532F8C; margin-bottom: 15px;">📊 Features</h4>
+            <div style="font-size: 14px; color: #666;">
+                <div style="margin-bottom: 10px;">
+                    <span style="color: #845ac7;">✓</span> Database Models & Migrations
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <span style="color: #845ac7;">✓</span> User Input Validation
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <span style="color: #845ac7;">✓</span> Responsive Design
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <span style="color: #845ac7;">✓</span> Production Deployment
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 30px;">
+    <div class="col-md-12">
+        <div class="content-card text-center">
+            <h3 style="color: #532F8C; margin-bottom: 20px;">Ready to build something amazing?</h3>
+            <p style="color: #666; margin-bottom: 25px;">
+                This template has been tested end-to-end and is guaranteed to work. 
+                Perfect for hackathons, prototypes, and learning modern web development.
+            </p>
+            <a href="/form" class="btn btn-primary btn-lg">Get Started Now</a>
+        </div>
+    </div>
 </div>
 {% endblock %}
