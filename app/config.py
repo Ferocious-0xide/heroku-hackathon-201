@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     # Ensure SQLAlchemy compatibility with Heroku's DATABASE_URL
     if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
         DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+    print("DEBUG: DATABASE_URL used:", DATABASE_URL)
 
 @lru_cache()
 def get_settings():
