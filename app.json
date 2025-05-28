@@ -8,7 +8,7 @@
     
     "addons": [
       {
-        "plan": "heroku-postgresql:mini",
+        "plan": "heroku-postgresql:essential-0",
         "as": "PRIMARY_DB"
       },
       {
@@ -17,7 +17,7 @@
       },
       {
         "plan": "papertrail:choklad",
-        "as": "LOGGING"
+        "as": "PAPERTRAIL"
       }
     ],
   
@@ -30,7 +30,7 @@
     "environments": {
       "review": {
         "addons": [
-          "heroku-postgresql:mini",
+          "heroku-postgresql:essential-0",
           "heroku-redis:mini"
         ],
         "scripts": {
