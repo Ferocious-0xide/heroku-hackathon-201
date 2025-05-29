@@ -2,8 +2,6 @@
 
 **Ready-to-deploy FastAPI template for hackathons - tested and working!**
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
 ## 🎯 What You Get
 
 A **production-ready** FastAPI application with:
@@ -29,22 +27,26 @@ heroku --version  # Should work
 ✅ **All working?** → Continue to Quick Deploy  
 ❌ **Missing something?** → Check [Complete Setup Guide](#complete-setup-guide) below
 
-## 🚀 Quick Deploy (3 Minutes)
+## 🚀 Quick Deploy (5 Minutes)
 
 ```bash
-# 1. Create Heroku app (use your own unique name)
+# 1. Get the code (fork first on GitHub, then clone your fork)
+git clone https://github.com/YOUR-USERNAME/heroku-hackathon-201.git
+cd heroku-hackathon-201
+
+# 2. Create Heroku app (use your own unique name)
 heroku create your-hackathon-app-name
 
-# 2. Add PostgreSQL database  
+# 3. Add PostgreSQL database  
 heroku addons:create heroku-postgresql:essential-0
 
-# 3. Deploy the code
+# 4. Deploy the code
 git push heroku main
 
-# 4. Set up database
+# 5. Set up database
 heroku run "python -m alembic upgrade head"
 
-# 5. Open your app
+# 6. Open your app
 heroku open
 ```
 
@@ -262,10 +264,7 @@ heroku git:remote -a your-app-name
 
 ### Quick Local Setup
 ```bash
-# Clone and enter directory
-git clone <your-repo-url>
-cd heroku-hackathon-201
-
+# After cloning (from step 1 above)
 # Create virtual environment with Python 3.11
 python3.11 -m venv venv
 
@@ -308,7 +307,7 @@ alembic upgrade head
 ## 📁 Project Structure
 
 ```
-heroku-hackathon-201/
+your-hackathon-app/
 ├── app/
 │   ├── main.py           # FastAPI application
 │   ├── config.py         # Settings and environment variables
